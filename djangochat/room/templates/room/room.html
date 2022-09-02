@@ -31,8 +31,8 @@
 
 {%block scripts%}
 
-{{ room.slug|json_script:"json-roomname"}}
-{{ request.user.username|json_script:"json-username"}}
+{{ room.slug|json_script:"json-roomname" }}
+{{ request.user.username|json_script:"json-username" }}
 
 <script>
     const roomName= JSON.parse(document.getElementById('json-roomname').textContent);
@@ -53,7 +53,7 @@
 
         const data = JSON.parse(e.data);
 
-        if (data.message){
+        if (data.message) {
             let html= '<div class="p-4 bg-gray-200 rounded-xl">';
                 html+= '<p class="font-semibold">'+ data.username +'</p>';
                 html+= '<p>'+ data.message +'</p></div>' ;
@@ -76,9 +76,9 @@
         const message= messageInputDom.value;
 
         chatSocket.send(JSON.stringify({
-            'message':message,
-            'username':userName,
-            'room':roomName
+            'message': message,
+            'username': userName,
+            'room': roomName
         }));
 
         messageInputDom.value = '';
