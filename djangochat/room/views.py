@@ -15,4 +15,4 @@ def room(request, slug):
     messages = Message.objects.filter(room=room)[0:25]
     
 
-    return render(request, 'room/room.html' , {'room':room})
+    return render(request, 'room/room.html' , {'room':room ,'messages':messages})

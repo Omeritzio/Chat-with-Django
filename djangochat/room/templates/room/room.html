@@ -11,10 +11,10 @@
     <div class="chat-messages space-y-3" id="chat-messages">
         <div class="p-4 bg-gray-200 rounded-xl">
             {% for message in messages  %}
-             <div class="p-4 bg-gray-200 rounded-xl">'
-                <p class="font-semibold">{{ message.user.username }}</p>'
+             <div class="p-4 bg-gray-200 rounded-xl">
+                <p class="font-semibold">{{ message.user.username }}</p>
                 <p>{{ message.content }}</p>
-            </div>' 
+            </div>
             {% endfor %}
         </div>
 
