@@ -1,9 +1,9 @@
 from email import message
 import json
 
+from django.contrib.auth.models import User
 from channels.generic.websocket import AsyncWebsocketConsumer
 from asgiref.sync import sync_to_async
-
 
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -38,10 +38,10 @@ class ChatConsumer(AsyncWebsocketConsumer):
                 'type':'chat_message',
                 'message':message,
                 'username':username,
-                'room':room,
             }
-
         )
+
+
     async def chat_message(self, event):
         message = event['message']
         username = event['username']
