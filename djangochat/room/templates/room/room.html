@@ -66,6 +66,8 @@
                 html+= '<p>'+ data.message +'</p></div>' ;
                 
             document.querySelector('#chat-messages').innerHTML += html;
+
+            scrolltoBottom();
         } else {
             alert('The message was empty!');
         }
@@ -101,7 +103,15 @@
         messageInputDom.value = '';
 
         return false
-    };
+    }
+
+
+    function scrolltoBottom() {
+        const objDiv = document.querySelector('#chat-messages');
+        objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
+    scrolltoBottom();
 </script>
 
 {%endblock%}
